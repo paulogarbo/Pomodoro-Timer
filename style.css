@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+:root {
+  /* colors */
+  --bg-color: #FFFFFF;
+  --text-color: #323238;
+  --bg-sounds-btn-color: #E1E1E6;
+  --shadows-btn-color: #3A3A3F;
+  --btn-sound-ativated: rgb(160, 233, 255);
+}
+
+html.dark {
+  --bg-color: #1A1A1A;
+  --text-color: #ECECEC;
+  --bg-sounds-btn-color: #3A3A3F;
+  --shadows-btn-color: #E1E1E6;
+  --btn-sound-ativated: rgba(34, 151, 186, 0.818);
+}
+
+html.dark .ph-moon, 
+html:not(.dark) .ph-sun {
+  display: none;
+}
+
+html.running .ph-play-circle,
+html:not(.running) .ph-pause-circle{
+  display: none;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  
+  background-color: var(--bg-color);
+}
+
+body, button {
+  color: var(--text-color);
+}
+
+.flex {
+  display: flex;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  appearance: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  line-height: 0;
+}
+
+#timer {
+  font-size: 7rem;
+  justify-content: center;
+  gap: 0.85rem;
+  font-weight: medium;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 3.5rem;
+}
+
+#timer-controls {
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+#sound-controls {
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#sound-controls button {
+  background-color: var(--bg-sounds-btn-color);
+  border-radius: 1.5rem;
+  padding: max(3rem);
+  box-shadow: 1.5px 0px 5px var(--shadows-btn-color);
+}
+
+.sounds-wrapper {
+  display: grid;
+  gap: 2rem;
+}
+
+html.music-on #sound-controls .button-active {
+  background-color: var(--btn-sound-ativated);
+}
+
+@media (min-width: 48rem) {
+  body {
+    height: 100vh;
+  }
+  
+  .app {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;;
+    gap: 5rem;
+  }
+
+  #toggle-mode{
+    font-size: 3.5rem;
+  }
+}

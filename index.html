@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta nmae="desciption" content="Temporizador estilo pomodoro"> 
+  <title>FocusTimer - Pomodoro</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-ico">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script type="module" src="./src/main.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <button id="toggle-mode">
+      <span class="sr-only">Ativar dark mode!</span>
+      <i class="ph-bold ph-sun"></i>
+      <i class="ph-bold ph-moon"></i>
+    </button>
+    <div id="desk-mode">
+      <section id="timer" class="flex">
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </section>
+
+      <section id="timer-controls" class="flex">
+        <button data-action = "toggleRunning" class="ph-bold ph-play-circle">
+          <span class="sr-only">
+            Aciona o timer.
+          </span>
+        </button>
+        <button data-action= "toggleRunning" class="ph-bold ph-pause-circle">
+          <span class="sr-only">Pausar contador</span>
+        </button>
+        <button data-action = "reset" class="ph-bold ph-stop-circle">
+          <span class="sr-only"> 
+            Para o timer.
+          </span>
+        </button>
+        <button data-action = "addFiveMinutes" class="ph-bold ph-plus-circle">
+          <span class="sr-only">
+            Aumenta em mais 5 minutos o tempo do timer.
+          </span>
+        </button> 
+        <button data-action = "removeFiveMinutes" class="ph-bold ph-minus-circle">
+          <span class="sr-only">
+            Diminui em 5 minutos o tempo do timer.
+          </span>
+        </button>
+      </section>
+    </div>
+    <section id="sound-controls">
+      <div class="sounds-wrapper">
+        <button data-action = "ambientaçãoFloresta" class="flex ph ph-tree button-active">
+          <span class="sr-only">Iniciar ambientação de floresta.</span>
+        </button>
+        <button data-action = "ambientaçãoChuva" class="flex ph ph-cloud button-active">
+          <span class="sr-only">Iniciar ambientação de chuva.</span>
+        </button>
+      </div>
+      <div class="sounds-wrapper">
+        <button data-action = "ambientaçãoPadaria" class="flex ph ph-storefront button-active">
+          <span class="sr-only">Iniciar ambientação de padaria.</span>
+        </button>
+        <button data-action = "ambientaçãoLareira" class="flex ph ph-fire button-active">
+          <span class="sr-only">Iniciar ambientação de lareira.</span>
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
